@@ -1,2 +1,11 @@
-# proxy_pool_scraping
-Implementation of web scraping using https://github.com/vhiwase/proxy_pool in Walmart Mexico sample dataset.
+# How to run the script
+
+## Step 1:
+```
+docker-compose up -d --build
+```
+
+## Step 2: 
+```
+docker-compose logs --tail=0 -f scrape
+```
