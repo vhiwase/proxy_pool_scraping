@@ -136,9 +136,15 @@ def create_dataframe_from_product_id(product_id):
     familyNames.append(familyName)
     departmentId = product['breadcrumb']['departmentId']
     departmentIds.append(departmentId)
-    fineLineName = product['breadcrumb']['fineLineName']
+    try:
+        fineLineName = product['breadcrumb']['fineLineName']
+    except:
+        fineLineName = None
     fineLineNames.append(fineLineName)
-    fineLineId = product['breadcrumb']['fineLineId']
+    try:
+        fineLineId = product['breadcrumb']['fineLineId']
+    except:
+        fineLineId = None
     fineLineIds.append(fineLineId)
     metaTitle = product['metaTitle']
     metaTitles.append(metaTitle)
