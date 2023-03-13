@@ -95,7 +95,6 @@ def create_dataframe_from_product_id(product_id):
     offerIds=[]
     offer_actives=[]
     refurbished_list=[]
-
     product_ids.append(product_id)
     try:
         all_data, proxy = get_details(product_id)
@@ -112,29 +111,65 @@ def create_dataframe_from_product_id(product_id):
     except:
         longDescription = None
     longDescriptions.append(longDescription)
-    displayName = product['displayName']
+    try:
+        displayName = product['displayName']
+    except:
+        displayName = None
     displayNames.append(displayName)
-    description = product['description']
+    try:
+        description = product['description']
+    except:
+        description = None
     descriptions.append(description)
-    negotiations = product['negotiations']
+    try:
+        negotiations = product['negotiations']
+    except:
+        negotiations = None
     negotiations_list.append(negotiations)
-    seoKeywords = product['seoKeywords']
+    try:
+        seoKeywords = product['seoKeywords']
+    except:
+        seoKeywords = None
     seoKeywords_list.append(seoKeywords)
-    metaDescription = product['metaDescription']
+    try:
+        metaDescription = product['metaDescription']
+    except:
+        metaDescription = None
     metaDescriptions.append(metaDescription)
-    maxQuantityAllowed = product['maxQuantityAllowed']
+    try:
+        maxQuantityAllowed = product['maxQuantityAllowed']
+    except:
+        maxQuantityAllowed = None
     maxQuantityAllowed_list.append(maxQuantityAllowed)
-    maxMSI = product['maxMSI']
+    try:
+        maxMSI = product['maxMSI']
+    except:
+        maxMSI = None
     maxMSIs.append(maxMSI)
-    isBulkBundle = product['isBulkBundle']
+    try:
+        isBulkBundle = product['isBulkBundle']
+    except:
+        isBulkBundle = None
     isBulkBundles.append(isBulkBundle)
-    familyId = product['breadcrumb']['familyId']
+    try:
+        familyId = product['breadcrumb']['familyId']
+    except:
+        familyId = None
     familyIds.append(familyId)
-    departmentName = product['breadcrumb']['departmentName']
+    try:
+        departmentName = product['breadcrumb']['departmentName']
+    except:
+        departmentName = None
     departmentNames.append(departmentName)
-    familyName = product['breadcrumb']['familyName']
+    try:
+        familyName = product['breadcrumb']['familyName']
+    except:
+        familyName = None
     familyNames.append(familyName)
-    departmentId = product['breadcrumb']['departmentId']
+    try:
+        departmentId = product['breadcrumb']['departmentId']
+    except:
+        departmentId = None
     departmentIds.append(departmentId)
     try:
         fineLineName = product['breadcrumb']['fineLineName']
@@ -146,42 +181,90 @@ def create_dataframe_from_product_id(product_id):
     except:
         fineLineId = None
     fineLineIds.append(fineLineId)
-    metaTitle = product['metaTitle']
+    try:
+        metaTitle = product['metaTitle']
+    except:
+        metaTitle = None
     metaTitles.append(metaTitle)
-    repositoryId = product['repositoryId']
+    try:
+        repositoryId = product['repositoryId']
+    except:
+        repositoryId = None
     repositoryIds.append(repositoryId)
-    productSeoUrl = product['productSeoUrl']
+    try:
+        productSeoUrl = product['productSeoUrl']
+    except:
+        productSeoUrl = None
     productSeoUrls.append(productSeoUrl)
     # productRatings = df.loc[index, 'productRatings']
     # freeShippingItem = df.loc[index, 'freeShippingItem']
     # skuPrice = df.loc[index, 'skuPrice']
     # skuPrices.append(skuPrice)
-    brand = product['brand']
+    try:
+        brand = product['brand']
+    except:
+        brand = None
     brands.append(brand)
-    isGiftListProduct = product['isGiftListProduct']
+    try:
+        isGiftListProduct = product['isGiftListProduct']
+    except:
+        isGiftListProduct = None
     isGiftListProducts.append(isGiftListProduct)
     # isGiftListProduct = product['childSKUs']
-    isPreOrderable = product['childSKUs'][0]['isPreOrderable']
+    try:
+        isPreOrderable = product['childSKUs'][0]['isPreOrderable']
+    except:
+        isPreOrderable = None
     isPreOrderables.append(isPreOrderable)
-    itemHeight = product['childSKUs'][0]['itemHeight']
+    try:
+        itemHeight = product['childSKUs'][0]['itemHeight']
+    except:
+        itemHeight = None
     itemHeights.append(itemHeight)
-    itemWidth = product['childSKUs'][0]['itemWidth']
+    try:
+        itemWidth = product['childSKUs'][0]['itemWidth']
+    except:
+        itemWidth = None
     itemWidths.append(itemWidth)
-    itemWeight = product['childSKUs'][0]['itemWeight']
+    try:
+        itemWeight = product['childSKUs'][0]['itemWeight']
+    except:
+        itemWeight = None
     itemWeights.append(itemWeight)
-    itemLength = product['childSKUs'][0]['itemLength']
+    try:
+        itemLength = product['childSKUs'][0]['itemLength']
+    except:
+        itemLength = None
     itemLengths.append(itemLength)
-    returnableStatus = product['childSKUs'][0]['returnableStatus']
+    try:
+        returnableStatus = product['childSKUs'][0]['returnableStatus']
+    except:
+        returnableStatus = None
     returnableStatus_list.append(returnableStatus)
-    Id = product['childSKUs'][0]['id']
+    try:
+        Id = product['childSKUs'][0]['id']
+    except:
+        Id = None
     Ids.append(Id)     
-    isBigItem = product['childSKUs'][0]['isBigItem']
+    try:
+        isBigItem = product['childSKUs'][0]['isBigItem']
+    except:
+        isBigItem = None
     isBigItems.append(isBigItem)
-    seoDescription = product['childSKUs'][0]['seoDescription']
+    try:
+        seoDescription = product['childSKUs'][0]['seoDescription']
+    except:
+        seoDescription = None
     seoDescriptions.append(seoDescription)
-    skuStatus = product['childSKUs'][0]['skuStatus']
+    try:
+        skuStatus = product['childSKUs'][0]['skuStatus']
+    except:
+        skuStatus = None
     skuStatus_list.append(skuStatus)
-    upc = product['childSKUs'][0]['upc']
+    try:
+        upc = product['childSKUs'][0]['upc']
+    except:
+        upc = None
     upcs.append(upc)
     try:
         vendorName = product['childSKUs'][0]['vendorName']
@@ -193,11 +276,20 @@ def create_dataframe_from_product_id(product_id):
     except:
         secondaryImages = None
     secondaryImages_list.append(secondaryImages)
-    sellingAtStore = product['childSKUs'][0]['sellingAtStore']
+    try:
+        sellingAtStore = product['childSKUs'][0]['sellingAtStore']
+    except:
+        sellingAtStore = None
     sellingAtStores.append(sellingAtStore)
-    formatId = product['childSKUs'][0]['formatId']
+    try:
+        formatId = product['childSKUs'][0]['formatId']
+    except:
+        formatId = None
     formatIds.append(formatId)
-    parentUpc = product['childSKUs'][0]['parentUpc']
+    try:
+        parentUpc = product['childSKUs'][0]['parentUpc']
+    except:
+        parentUpc = None
     parentUpcs.append(parentUpc)
     try:
         offerId = product['childSKUs'][0]['offerList'][0]['offerId']
@@ -219,8 +311,12 @@ def create_dataframe_from_product_id(product_id):
     skuPrices.append(originalPrice)
     sellerNames.append(sellerName)
     shippingCountrys.append(shippingCountry)
-    smallImageUrl = product['childSKUs'][0]['smallImageUrl']
-    largeImageUrl = product['childSKUs'][0]['largeImageUrl']
+    try:
+        smallImageUrl = product['childSKUs'][0]['smallImageUrl']
+        largeImageUrl = product['childSKUs'][0]['largeImageUrl']
+    except:
+        smallImageUrl = None
+        largeImageUrl = None
     smallImageUrls.append(smallImageUrl)
     largeImageUrls.append(largeImageUrl)
     
@@ -299,6 +395,7 @@ for product_id in product_ids[len(visited_product_ids):]:
             url = 'https://www.walmart.com.mx' + df[df['productId'] == str(product_id)]['productSeoUrl'].tolist()[0]
             print("url2:", url)
             print(e)
+            print("product_id = ", product_id)
             break
     dataf = dataf.append(dff)
     visited_product_ids.append(product_id)
